@@ -3,7 +3,7 @@ name: Run Unit Tests
 on: push
 jobs:
   run-tests:
-    runs-on: python-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.11"]
