@@ -39,23 +39,14 @@ class TestAPI(TestCase):
     def test_get_all_todos(self):
         """Test fetching all todos."""
         response = self.client.get(self.list_url)
-        try:
-            self.assertEqual(response.status_code, status.HTTP_200_OK)
-        except AssertionError as e:
-            logger.info(f'Incorrect API Response: {e}')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_to_do(self):
         """Test fetching one todo instance."""
         response = self.client.get(self.detail_url)
-        try:
-            self.assertEqual(response.status_code, status.HTTP_200_OK)
-        except AssertionError as e:
-            logger.info(f'Incorrect API Response: {e}')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_404_code(self):
         """Test 404 not found response."""
         response = self.client.get(self.not_found_detail_url)
-        try:
-            self.assertEqual(response.status_code, status.HTTP_200_OK)
-        except AssertionError as e:
-            logger.info(f'Incorrect API Response: {e}')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
