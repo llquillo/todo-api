@@ -49,4 +49,4 @@ class TestAPI(TestCase):
     def test_404_code(self):
         """Test 404 not found response."""
         response = self.client.get(self.not_found_detail_url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
