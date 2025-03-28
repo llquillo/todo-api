@@ -20,6 +20,8 @@ jobs:
         run: pip3 install django==5.1.7
       - name: Install django REST framework
         run: pip3 install djangorestframework==3.15.2
+      - name: Install cors headers
+        run: pip3 install django-cors-headers==4.7.0
       - name: Run unit tests
         run: python3 todo_list/manage.py test todo
         
